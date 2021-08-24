@@ -19,9 +19,12 @@
     "url": "https://github.com/GSG-G10/Book-Swap/issues"
   },
   "homepage": "https://github.com/GSG-G10/Book-Swap#readme",
+<<<<<<< HEAD
   "dependencies": {
     "express": "^4.17.1"
   },
+=======
+>>>>>>> 5d20f6905763b4c69d120c8e774795de1093dd2a
   "devDependencies": {
     "nodemon": "^2.0.12"
   }
