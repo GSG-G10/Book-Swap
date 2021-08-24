@@ -5,6 +5,12 @@
   box-sizing: 0;
 
 }
+body{
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 .container {
   width: 70%;
   display: flex;
@@ -14,7 +20,7 @@
   margin: 50px auto;
 }
 .login-section {
-  width:45%;
+  width:35%;
 }
 .login-title{
   display: flex;
@@ -34,7 +40,7 @@ form {
   justify-content: center;
   flex-direction: column;
   padding: 10px;
-  background-color: #F6E7E1;
+  background-color:rgba(255, 255, 255, 0.9);
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-radius: 50px ;
 
