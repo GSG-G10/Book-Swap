@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="../style/style.css" />
     <link
-    rel="icon"
-    href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
+      rel="icon"
+      href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
     />
     <title>Book Swap</title>
   </head>
@@ -18,9 +18,19 @@
       </header>
       <section class="login-section">
         <form action="/login" method="post">
-          <h1 class="login-title">Log in</h1>
+          <h1 class="login-title">Sign up </h1>
           <div class="input">
-            <label for="email">Email </label>
+            <label for="password">Name</label>
+            <input
+              type="text"
+              name="login-name"
+              id="login-name"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="email">Email</label>
             <input
               type="email"
               name="login-email"
@@ -30,7 +40,7 @@
             />
           </div>
           <div class="input">
-            <label for="password">Password </label>
+            <label for="password">Password</label>
             <input
               type="password"
               name="login-password"
@@ -39,8 +49,18 @@
               placeholder="Enter Your Password"
             />
           </div>
-          <button type="submit" id="login-btn">Log In</button>
-          <a href="./pages/signUp.html">I don't have account</a>
+
+          <div class="input">
+            <label for="password">Confirm Password</label>
+            <input
+              type="password"
+              name="login-co-password"
+              id="login-co-password"
+              required
+              placeholder="Enter confirm your Password"
+            />
+          </div>
+          <button type="submit">Sign Up</button>
         </form>
       </section>
     </div>
