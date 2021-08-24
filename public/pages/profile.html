@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Swap</title>
     <script src="https://kit.fontawesome.com/f15fba9ca3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/profile.css">
 </head>
 <body>
     <header>
@@ -22,7 +23,29 @@
         <div class="avatar">
             <img src="../images/Profile_avatar_placeholder_large.png" alt="avatar" class="avatar-img">
         </div>
-        <button>Add a Book</button>
+        <button class="add-btn">Add a Book</button>
+        <!-- Popup add form -->
+        <div class="add-form-container">
+            <h2 class="form-title">Add Book</h2>
+            <div class="popup-form-container">
+            <form action="/add-book" method="POST" class="add-form">
+            <label for="book-name-input"> Book Name 
+                <input type="text" name="book-name-input" id="book-name-input" required>
+            </label>
+            <label for="book-img-input">Book Image 
+                <input type="url" name="book-img-input" id="book-img-input" required>
+            </label>
+            <label for="author-input"> Author 
+                <input type="text" name="author-input" id="author-input" required>
+            </label>
+            </form>
+            <div class="btns">
+                <button class="save" type="submit">save</button>
+                <button class="cancel">cancel</button>
+            </div>
+        </div>
+          </div>
+          <div class="content-hider"></div>
     </section>
     <section class="added-books">
         <h2>Added Books</h2>
@@ -44,6 +67,7 @@
         <h2>Borrowed Books</h2>
 
     </section>
-    
+    <script src="../scripts/dom.js"></script>
+    <script src="../scripts/fetchProfile.js"></script>
 </body>
 </html>
