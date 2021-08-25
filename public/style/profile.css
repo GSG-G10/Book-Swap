@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  header{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 15px;
+      background-color:#888079 ;
+  }
+  .logo{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+.list{
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.list li a{
+    margin-left: 15px;
+    font-size: 22px;
+    text-decoration: none;
+    color: #000;
+}
+.user{
+    width:50%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+.avatar img{
+    border-radius: 50%;
+    width:100px;
+    height: 100px;
+}
+/* pop up form  */
+.add-form-container {
+    text-align: center;
+    width: 60vw;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+  }
+  .add-form-container.active {
+    display: inline;
+  }
+  .content-hider {
+    width: 100vw;
+    height: 100vh;
+    background-color: #060606;
+    opacity: 41%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content-hider.active {
+    display: block;
+  }
+  .fa-times-circle {
+    float: right;
+  }
+  .form-title {
+    clear: right;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  .add-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-left: 5%;
+  }
+  .add-form label {
+    align-self: flex-start;
+    margin: 5px 0;
+  }
+  .add-form input {
+    background-color: #dddddd;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 70%;
+    padding-left: 10px;
+  }
+  .label-container {
+    width: 90%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  #details {
+    height: 60px;
+  }
+  .add-form select {
+    height: 30px;
+    outline: none;
+    width: 70%;
+  }
+  .add-form-btns {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .add-form-btns button {
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+  }
+  .cancel-button {
+    background-color: #cf1515;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .save-button {
+    background-color: #dddddd;
+    font-size: 20px;
+    font-weight: bold;
+  }

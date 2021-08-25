@@ -1,24 +1,29 @@
 {
-  "name": "Book-Swap",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" :"nodemon "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GSG-G10/Book-Swap.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GSG-G10/Book-Swap/issues"
-  },
-  "homepage": "https://github.com/GSG-G10/Book-Swap#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+    "name": "Book-Swap",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "NODE_ENV=production node src/server.js",
+        "dev": "NODE_ENV=development nodemon src/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GSG-G10/Book-Swap.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GSG-G10/Book-Swap/issues"
+    },
+    "homepage": "https://github.com/GSG-G10/Book-Swap#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "pg": "^8.7.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
 }
