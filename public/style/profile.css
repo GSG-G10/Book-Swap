@@ -212,6 +212,7 @@ header {
   }
 .user-info-section{
   flex-direction: column;
+  margin: 20px 3px;
 }
 .book-card{
   width: 40%;
