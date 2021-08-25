@@ -179,9 +179,11 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 .book-card{
   width:30%;
+  margin-bottom: 15px;
 }
 .book-card img{
   width:100%;
@@ -203,7 +205,7 @@ header {
     width: 80%;
   }
   .nav{
-    width:60%;
+    width:68%;
   }
   .added-books-title{
     font-size: 19px;
@@ -211,4 +213,14 @@ header {
 .user-info-section{
   flex-direction: column;
 }
+.book-card{
+  width: 40%;
+}
+
+}
+@media (max-width:425px){
+  .book-card{
+    width: 90%;
+  }
+  
 }

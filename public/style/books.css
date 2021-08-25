@@ -4,3 +4,16 @@
   outline: none;
   box-sizing: border-box;
 }
+.books-section{
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #5E454B;
+    border-bottom:4px solid var(--main-color);
+    margin: 20px auto;
+  }
