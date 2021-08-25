@@ -51,3 +51,8 @@ saveButton.addEventListener('click', () => {
   contentHider.classList.remove('active');
   document.body.style.overflow = 'auto';
 });
+cancelBtn.addEventListener('click', () => {
+  popupForm.classList.remove('active');
+  contentHider.classList.remove('active');
+  document.body.style.overflow = 'auto';
+});
