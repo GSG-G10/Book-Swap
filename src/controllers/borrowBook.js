@@ -1,4 +1,4 @@
-const borrowBook = (req , res) => {
+const borrowBook = (res , req) => {
     res.json({
         borrow : 'done',
     })
