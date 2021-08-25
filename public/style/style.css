@@ -20,7 +20,7 @@ body{
   margin: 50px auto;
 }
 .login-section {
-  width:45%;
+  width:35%;
 }
 .login-title{
   display: flex;
@@ -35,8 +35,8 @@ form {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 14px;
-  background-color: #F6E7E1;
+  padding: 10px;
+  background-color:rgb(255, 255, 255);
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   border-radius: 50px ;
 
