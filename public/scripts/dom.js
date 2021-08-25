@@ -1,6 +1,18 @@
 const booksSection = document.querySelector('.books-section');
+// Create Element 
+const createElement = (tag, className, parent, text) => {
+  const ele = document.createElement(tag);
+  parent.appendChild(ele);
+  ele.classList.add(className);
+  if (tag === 'img') {
+    ele.src = text;
+  } else {
+    ele.textContent = text;
+  }
+  return ele;
+};
 
-// Create card function --------------------------------------------
+// Create card function 
 const createCard = (data) => {
   const {
     username,
