@@ -1,78 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Swap</title>
-    <script src="https://kit.fontawesome.com/f15fba9ca3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href='../style/profile.css'>
+    <script
+      src="https://kit.fontawesome.com/f15fba9ca3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../style/profile.css" />
     <link
-    rel="icon"
-    href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
+      rel="icon"
+      href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
     />
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 class="logo">Book Swap</h1>
-        <nav class="nav">
-            <ul class="list">
-                <li><a href="./books.html">Home</a></li>
-                <li><a href="./profile.html">Profile</a></li>
-            </ul>
-        </nav>
+      <h1 class="logo">Book Swap</h1>
+      <nav class="nav">
+        <ul class="list">
+          <li><a href="./books.html">Home</a></li>
+          <li><a href="./profile.html">Profile</a></li>
+          <button class='logout'>Logout</button>
+        </ul>
+      </nav>
     </header>
     <section class="user-info-section">
-        <div class='user'>
-        <h2>Ahmad Sabbah</h2>
-        <div class="avatar">
-            <img src="../images/Profile_avatar_placeholder_large.png" alt="avatar" class="avatar-img">
-        </div>
-        <button class="add-btn">Add a Book</button>
-        <!-- Popup add form -->
-        <div class="add-form-container">
-            <h2 class="form-title">Add Book</h2>
-            <div class="popup-form-container">
-            <form action="/add-book" method="POST" class="add-form">
-            <label for="book-name-input"> Book Name 
-                <input type="text" name="book-name-input" id="book-name-input" required>
-            </label>
-            <label for="book-img-input">Book Image 
-                <input type="url" name="book-img-input" id="book-img-input" required>
-            </label>
-            <label for="author-input"> Author 
-                <input type="text" name="author-input" id="author-input" required>
-            </label>
-            </form>
-            <div class="btns">
-                <button class="save" type="submit">save</button>
-                <button class="cancel">cancel</button>
-            </div>
-        </div>
-          </div>
-          <div class="content-hider"></div>
-    </section>
-    <section class="added-books">
-        <h2>Added Books</h2>
-        <div class="book-container">
-            <img src="https://images-na.ssl-images-amazon.com/images/I/41K90unQhYL._SX298_BO1,204,203,200_.jpg" alt="book" class="book-img">
-            <div class="info-container">
-                <p class="username">Ahmad</p>
-                <i class="far fa-edit"></i>
-                <i class="fas fa-trash-alt"></i>
-                <p class="bookname">The Land of Sand Oranges</p>
-                <p class="auther">Auther: Ghassan Kanafani</p>
-                <p class="status"> available</p>
-                <button class="borrow btn"> Borrow Book</button>
-            </div>
-        </div>
+      <div class="avatar">
+        <img
+          src="../images/Profile_avatar_placeholder_large.png"
+          alt="avatar"
+          class="avatar-img"
+        />
+      </div>
 
+      <div class="user">
+        <h2>Ahmad Sabbah</h2>
+        <button class="add-btn">Add a Book</button>
+      </div>
+    </section>
+    <!-- Popup add form -->
+    <div class="add-form-container">
+      <h2 class="form-title">Add Book</h2>
+      <div class="popup-form-container">
+        <form action="/add-book" method="POST" class="add-form">
+          <label for="book-name-input"> Book Name </label>
+          <input
+            type="text"
+            name="book-name-input"
+            id="book-name-input"
+            required
+          />
+
+          <label for="book-img-input">Book Image </label>
+          <input
+            type="url"
+            name="book-img-input"
+            id="book-img-input"
+            required
+          />
+
+          <label for="author-input"> Author </label>
+          <input type="text" name="author-input" id="author-input" required />
+        </form>
+        <div class="btns">
+          <button class="save" type="submit">save</button>
+          <button class="cancel">cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="content-hider"></div>
+
+    <section class="added-books">
+      <h2 class='added-books-title'>Added Books</h2>
+      <div class="book-container">
+          <div class='book-card'>
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/41K90unQhYL._SX298_BO1,204,203,200_.jpg"
+          alt="book"
+          class="book-img"
+        />
+        <div class="info-container">
+          <p class="username">Owner: Ahmad</p>
+          <i class="far fa-edit"></i>
+          <i class="fas fa-trash-alt"></i>
+          <p class="bookname">The Land of Sand Oranges</p>
+          <p class="auther">Auther: Ghassan Kanafani</p>
+          <p class="status">Status :available</p>
+          <button class="borrow btn">Borrow Book</button>
+        </div>
+    </div>
+    <div class='book-card'>
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/41K90unQhYL._SX298_BO1,204,203,200_.jpg"
+          alt="book"
+          class="book-img"
+        />
+        <div class="info-container">
+          <p class="username">Owner: Ahmad</p>
+          <i class="far fa-edit"></i>
+          <i class="fas fa-trash-alt"></i>
+          <p class="bookname">The Land of Sand Oranges</p>
+          <p class="auther">Auther: Ghassan Kanafani</p>
+          <p class="status">Status :available</p>
+          <button class="borrow btn">Borrow Book</button>
+        </div>
+    </div>
+    <div class='book-card'>
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/I/41K90unQhYL._SX298_BO1,204,203,200_.jpg"
+          alt="book"
+          class="book-img"
+        />
+        <div class="info-container">
+          <p class="username">Owner: Ahmad</p>
+          <i class="far fa-edit"></i>
+          <i class="fas fa-trash-alt"></i>
+          <p class="bookname">The Land of Sand Oranges</p>
+          <p class="auther">Auther: Ghassan Kanafani</p>
+          <p class="status">Status :available</p>
+          <button class="borrow btn">Borrow Book</button>
+        </div>
+    </div>
+      </div>
     </section>
     <section class="borowed-books">
-        <h2>Borrowed Books</h2>
-
+      <h2 class='added-books-title'>Borrowed Books</h2>
     </section>
     <script src="../scripts/dom.js"></script>
     <script src="../scripts/fetchProfile.js"></script>
-</body>
+  </body>
 </html>

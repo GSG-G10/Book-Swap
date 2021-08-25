@@ -1,136 +1,227 @@
 * {
-    padding: 0;
-    margin: 0;
-    outline: none;
-    box-sizing: border-box;
-  }
-  header{
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 15px;
-      background-color:#888079 ;
-  }
-  .logo{
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-  }
-.list{
-    list-style: none;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family:cursive
 }
-.list li a{
-    margin-left: 15px;
-    font-size: 22px;
-    text-decoration: none;
-    color: #000;
+:root{
+  --main-color:#CEE5D0;
 }
-.user{
-    width:50%;
-    padding: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* flex-wrap: wrap; */
+p{
+  font-size: 17px;
+  margin: 10px 0;
 }
-.avatar img{
-    border-radius: 50%;
-    width:100px;
-    height: 100px;
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+  background-color:var(--main-color);
+}
+.logo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #5E454B;
+}
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.list li a {
+  margin-left: 15px;
+  font-size: 22px;
+  text-decoration: none;
+  color: #000;
+}
+.user-info-section {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 20px 100px ;
+}
+.user {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user h2 {
+  margin-bottom: 20px;
+}
+.avatar img {
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+}
+.add-btn,.borrow{
+  width:160px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  background-color:var(--main-color);
+  font-size: 19px;
+}
+.logout{
+  width:100px;
+  margin-left: 25px;
+  background-color: var(--main-color);
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(252, 70, 70);
 }
 /* pop up form  */
 .add-form-container {
-    text-align: center;
-    width: 60vw;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 15px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    display: none;
+  text-align: center;
+  width: 20%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.add-form-container.active {
+  display: inline;
+}
+.content-hider {
+  width: 100vw;
+  height: 100vh;
+  background-color: #060606;
+  opacity: 41%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-hider.active {
+  display: block;
+}
+.fa-times-circle {
+  float: right;
+}
+.form-title {
+  clear: right;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.add-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 5%;
+}
+.add-form label {
+  align-self: flex-start;
+  margin: 5px 0;
+}
+.add-form input {
+  background-color: #dddddd;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+}
+.popup-form-container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.btns {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.btns button {
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.cancel {
+  color: #000;
+  font-size: 20px;
+}
+.save {
+  background-color: #59bb40;
+  font-size: 20px;
+}
+/* Added boos sction */
+.added-books,.borowed-books{
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.added-books-title{
+  font-size: 25px;
+  font-weight: bold;
+  color: #5E454B;
+  border-bottom:4px solid var(--main-color);
+  margin: 20px auto;
+}
+.book-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.book-card{
+  width:30%;
+  margin-bottom: 15px;
+}
+.book-card img{
+  width:100%;
+  height: 400px;
+}
+
+/*  Media query */
+@media (max-width:768px){
+  header {
+    padding: 8px;
   }
-  .add-form-container.active {
-    display: inline;
+  .list li a,.logout {
+    font-size: 16px;
   }
-  .content-hider {
-    width: 100vw;
-    height: 100vh;
-    background-color: #060606;
-    opacity: 41%;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
+  .logo {
+    font-size: 18px;
   }
-  .content-hider.active {
-    display: block;
+  .add-form-container {
+    width: 80%;
   }
-  .fa-times-circle {
-    float: right;
+  .nav{
+    width:68%;
   }
-  .form-title {
-    clear: right;
-    margin-bottom: 25px;
-    font-size: 20px;
+  .added-books-title{
+    font-size: 19px;
   }
-  .add-form {
+.user-info-section{
+  flex-direction: column;
+  margin: 20px 3px;
+}
+.book-card{
+  width: 40%;
+}
+
+}
+@media (max-width:425px){
+  .book-card{
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    margin-left: 5%;
   }
-  .add-form label {
-    align-self: flex-start;
-    margin: 5px 0;
-  }
-  .add-form input {
-    background-color: #dddddd;
-    border: none;
-    outline: none;
-    height: 30px;
-    width: 70%;
-    padding-left: 10px;
-  }
-  .label-container {
-    width: 90%;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  #details {
-    height: 60px;
-  }
-  .add-form select {
-    height: 30px;
-    outline: none;
-    width: 70%;
-  }
-  .add-form-btns {
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .add-form-btns button {
-    height: 40px;
-    width: 200px;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 15px;
-  }
-  .cancel-button {
-    background-color: #cf1515;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .save-button {
-    background-color: #dddddd;
-    font-size: 20px;
-    font-weight: bold;
-  }
+  
+}
