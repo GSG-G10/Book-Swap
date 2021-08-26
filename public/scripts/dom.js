@@ -1,6 +1,7 @@
 const booksSection = document.querySelector(".book-container");
 const addedBooksSection = document.querySelector(".added-books");
 const borrowedBooksSection = document.querySelector(".borowed-books");
+const logout = document.querySelector('.logout');
 // for pop up window
 const popupForm = document.querySelector(".add-form-container");
 const addBtn = document.querySelector(".add-btn");
@@ -85,3 +86,7 @@ signUpBtn.addEventListener("click", () => {
   signupPassword = signupPassword.value;
   signUpBtn = signUpBtn.value;
 });
+//  log out 
+logout.addEventListener('click',()=>{
+  fetch('/logout');
+})
