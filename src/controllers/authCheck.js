@@ -1,5 +1,5 @@
 const { verify } = require('jsonwebtoken');
-
+require('env2')('.env');
 const checkAuth = (cookie, callback) => {
     if (!cookie)
         callback(true);

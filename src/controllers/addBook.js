@@ -1,13 +1,23 @@
-const {addBookQuery} = require('../Database/queries')
-const addBook = (res , req) => {
-    const {username, bookName, bookPhoto, author} = req.body;
-    addBookQuery(username, bookName, bookPhoto, author)
-    .then(() => {
-        res.send('Book added')
-    }).catch(error => {
-        console.log(error.message)
-        res.status(500).json({msg: 'internal server error'})
-    })
+const { checkAuth, logout } = require('../controllers');
+const { addBookQuery } = require('../Database/queries');
+
+const addBook = (req, res) => {
+    const authCookieName = process.env.AUTH_COOKIE;
+    const authCookie = req.cookie[authCookieName];
+    const addBookCheck = (err, data) => {
+        if (err) {
+            logout(req, res);
+        }
+        if (data) {
+            const userName = data.userName;
+            const { bookName, bookAuthor, bookImg } = req.body;
+            addBookQuery(userName, bookName, bookAuthor, bookImg).then(() => {
+                    res.json({ message: 'Book added successfully' });
+                })
+                .catch(err => res.status(500).json({ message: 'Internal server error' }));
+        }
+    };
+    checkAuth(authCookie, addBookCheck);
 };
 
 module.exports = addBook;
