@@ -16,6 +16,7 @@ const login = (req, res) => {
                 })
                 .then(() => {
                     getPassword(userName).then(data => {
+                        console.log(password, data.password);
                         comparePasswords(password, data.password, (err, same) => {
                             if (err) {
                                 console.log(err);
@@ -33,7 +34,6 @@ const login = (req, res) => {
             res.redirect('/home');
     };
     checkAuth(authCookie, loginCheck);
-
 };
 
 module.exports = login;
