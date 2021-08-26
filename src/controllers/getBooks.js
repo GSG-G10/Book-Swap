@@ -1,9 +1,11 @@
-const { checkAuth, logout } = require('../controllers');
+const checkAuth = require('./authCheck');
+const logout = require('./logout');
+require('env2')('.env');
 const { getBooksQuery } = require('../Database/queries');
 
 const getBooks = (req, res) => {
     const authCookieName = process.env.AUTH_COOKIE;
-    const authCookie = req.cookie[authCookieName];
+    const authCookie = req.cookies[authCookieName];
     const getBookCheck = (err, data) => {
         if (err) {
             logout(req, res);

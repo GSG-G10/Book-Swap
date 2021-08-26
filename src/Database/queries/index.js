@@ -1,4 +1,4 @@
-const getAllData = require('./getAllData')
+const getBooksQuery = require('./getAllData')
 const signupQuery = require('./signupQuery')
 const addBookQuery = require('./addBookQuery')
 const deleteBookQuery = require('./deleteBookQuery')
@@ -9,4 +9,4 @@ const addUser = require('./addUser');
 const getPassword = require('./getPassword');
 
 
-module.exports = { getAllData, signupQuery, addBookQuery, deleteBookQuery, borrowBookQuery, editBookQuery, checkIfMember, addUser, getPassword };
+module.exports = { getBooksQuery, signupQuery, addBookQuery, deleteBookQuery, borrowBookQuery, editBookQuery, checkIfMember, addUser, getPassword };
