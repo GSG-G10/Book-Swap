@@ -4,8 +4,9 @@ const fetchBooks = () => {
     fetch('home/books')
         .then((response) => response.json())
         .then((data) => {
+            console.log(data);
             for (book in data) {
-                createCard(book, booksSection);
+                createCard(data[book]);
             }
         }).catch((error) => console.log(error.message));
 };
