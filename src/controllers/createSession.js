@@ -1,5 +1,5 @@
 const { sign } = require('jsonwebtoken');
-
+require('env2')('.env');
 const createSession = (userName) => {
     const cookiePayload = {
         userName

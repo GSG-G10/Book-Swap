@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-    <link
-    rel="icon"
-    href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
-    />
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7" />
     <title>Book Swap</title>
     <style>
-      form {
-  margin-top: 100px;
-      }
+        form {
+            margin-top: 100px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <section class="login-section">
-        <form action="/login" method="post">
-          <h1 class="login-title">Log in</h1>
-          <div class="input">
-            <label for="userName">User Name </label>
-            <input
-              type="text"
-              name="login-user-name"
-              id="login-user-name"
-              required
-              placeholder="Enter Your User Name"
-            />
-          </div>
-          <div class="input">
-            <label for="password">Password </label>
-            <input
-              type="password"
-              name="login-password"
-              id="login-password"
-              required
-              placeholder="Enter Your Password"
-            />
-          </div>
-          <button type="submit" id="login-btn">Log In</button>
-          <a href="./pages/signUp.html">I don't have account</a>
-        </form>
-      </section>
+        <section class="login-section">
+            <form action="/login" method="post">
+                <h1 class="login-title">Log in</h1>
+                <div class="input">
+                    <label for="email">User Name </label>
+                    <input type="text" name="userName" id="login-email" required placeholder="Enter Your username" />
+                </div>
+                <div class="input">
+                    <label for="password">Password </label>
+                    <input type="password" name="password" id="login-password" required placeholder="Enter Your Password" />
+                </div>
+                <button type="submit" id="login-btn">Log In</button>
+                <a href="./pages/signUp.html">I don't have account</a>
+            </form>
+        </section>
     </div>
-  </body>
+</body>
+
 </html>
