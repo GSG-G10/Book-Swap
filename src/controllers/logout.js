@@ -6,4 +6,4 @@ const logout = (req , res) => {
     ) 
 };
 
-module.exports = login;
+module.exports = logout;

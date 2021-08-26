@@ -19,7 +19,7 @@ switch (NODE_ENV) {
 }
 
 const options = {
-    connectionString: 'postgres://mohammad:123456@localhost:5432/bookswap',
+    connectionString: dbUrl,
     ssl: {
         rejectUnauthorized: false,
     }

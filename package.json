@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "NODE_ENV=production node src/server.js",
-        "dev": "NODE_ENV=development nodemon src/server.js" 
+        "dev": "NODE_ENV=development nodemon src/server.js"
     },
     "repository": {
         "type": "git",
@@ -24,6 +24,8 @@
         "pg": "^8.7.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.12"
+        "nodemon": "^2.0.12",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.24.0"
     }
 }
