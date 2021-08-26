@@ -10,14 +10,16 @@ Book Swap is a virtual place to exchange books online. User can borrow available
 
 <h3>User Stories</h3>
 
-As a user, you can sign up to book swap website.
-As a user, you can have access to book swap website by logging in after signing up once.
-As a user, you have a profile after signing up to book swap website.
-As a user, you can borrow different avaluable books in our website.
-As a user, you can put books on website to let people borrow them on your profile.
-As a user, you can delete unwanted books that you provided to be borrowed.
-As a user, you can edit the information of your added books.
-As a user, you can return a borrowed book by clicking on return button in user profile page.
+As a user I can :
+
+* sign up to book swap website.
+* have access to book swap website by logging in after signing up once.
+* have a profile after signing up to book swap website.
+* borrow different avaluable books in our website.
+* put books on website to let people borrow them on your profile.
+* delete unwanted books that you provided to be borrowed.
+* edit the information of your added books.
+* return a borrowed book by clicking on return button in user profile page.
 
 
   
@@ -45,3 +47,4 @@ Team members
 * Reem Shamia
 * Mohammed Mansour
 * Noor Salem Abunamus
+
