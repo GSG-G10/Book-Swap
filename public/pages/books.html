@@ -11,7 +11,13 @@
     <link rel="stylesheet" href='../style/profile.css'>
     <link rel="stylesheet" href='../style/books.css'>
     <title>Book Swap</title>
+    <style>
+      .add-btn{
+        margin:20px;
+      }
+    </style>
 </head>
+
 <body>
     <header>
         <h1 class="logo">Book Swap</h1>
@@ -23,7 +29,40 @@
             </ul>
         </nav>
     </header>
+  
+        <!-- Popup add form -->
+        <div class="add-form-container">
+          <h2 class="form-title">Add Book</h2>
+          <div class="popup-form-container">
+            <form action="/add-book" method="POST" class="add-form">
+              <label for="book-name-input"> Book Name </label>
+              <input
+                type="text"
+                name="book-name-input"
+                id="book-name-input"
+                required
+              />
+    
+              <label for="book-img-input">Book Image </label>
+              <input
+                type="url"
+                name="book-img-input"
+                id="book-img-input"
+                required
+              />
+    
+              <label for="author-input"> Author </label>
+              <input type="text" name="author-input" id="author-input" required />
+            </form>
+            <div class="btns">
+              <button class="save" type="submit">save</button>
+              <button class="cancel">cancel</button>
+            </div>
+          </div>
+        </div>
+        <div class="content-hider"></div>
     <section class="books-section">
+      <button class="add-btn">Add Book</button>
         <h1 class='title'> All Books </h1>
         <div class="book-container">
             <div class='book-card'>

@@ -12,38 +12,64 @@
 
 <body>
     <div class="container">
-        <section class="login-section">
-            <form action="/signup" method="post">
-                <h1 class="login-title">Sign up </h1>
-                <div class="input">
-                    <label for="username">User Name</label>
-                    <input type="text" name="userName" id="username" required placeholder="Enter Your Name" />
-                </div>
-                <div class="input">
-                    <label for="first-name">First Name</label>
-                    <input type="text" name="firstName" id="first-name" required placeholder="Enter Your Name" />
-                </div>
-                <div class="input">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" name="lastName" id="last-name" required placeholder="Enter Your Name" />
-                </div>
-                <div class="input">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="login-email" required placeholder="Enter Your Email" />
-                </div>
-                <div class="input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="login-password" required placeholder="Enter Your Password" />
-                </div>
+      <section class="login-section">
+        <form action="/signup" method="post">
+          <h1 class="login-title">Sign up</h1>
+          <div class="input">
+            <label for="username">User Name</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="first-name">First Name</label>
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="last-name">Last Name</label>
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="signup-email">Email</label>
+            <input
+              type="email"
+              name="signup-email"
+              id="signup-email"
+              required
+              placeholder="Enter Your Email"
+            />
+          </div>
+          <div class="input">
+            <label for="signup-password">Password</label>
+            <input
+              type="password"
+              name="signup-password"
+              id="signup-password"
+              required
+              placeholder="Enter Your Password"
+            />
+          </div>
 
-                <div class="input">
-                    <label for="password">Confirm Password</label>
-                    <input type="password" name="login-co-password" id="login-co-password" required placeholder="Enter confirm your Password" />
-                </div>
-                <button type="submit">Sign Up</button>
-            </form>
-        </section>
+          <button type="submit" class="signUp-btn">Sign Up</button>
+        </form>
+      </section>
     </div>
-</body>
-
+    <script src="./scripts/dom.js"></script>
+  </body>
 </html>
