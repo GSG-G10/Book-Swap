@@ -1,27 +1,38 @@
-const { checkAuth, createSession } = require('../controllers');
+const checkAuth = require('./authCheck');
+const createSession = require('./createSession');
 const { checkIfMember, addUser } = require('../Database/queries');
 const { hashPassword } = require('../utilities/hashPassword');
-
+require('env2')('.env');
 const signup = (req, res) => {
     const authCookieName = process.env.AUTH_COOKIE;
-    const authCookie = req.cookie[authCookieName];
+    const authCookie = req.cookies[authCookieName];
+    console.log(authCookieName);
     const registerUser = (err, data) => {
         if (err) {
             res.clearCookie(authCookieName);
             const { userName, firstName, lastName, email, password } = req.body;
-            checkIfMember(userName).then(data => {
-                    if (data.length === 1)
+            console.log(userName, firstName, lastName, email, password);
+            checkIfMember(userName).then(exists => {
+                    if (exists)
                         res.status(409).json({ message: 'User name taken' });
-                    else return data;
                 })
                 .then(() => {
-                    addUser(userName, firstName, lastName, email, hashPassword(password)).then(() => {
-                            res.cookie(authCookie, createSession(userName), { httpOnly: true, secure: true });
-                            res.cookie('userName', userName);
-                            res.redirect('/home');
-                        })
-                        .catch(err => res.status(500).json({ message: 'Internal server error' }));
-                }).catch(err => res.status(500).json({ message: 'Internal server error' }));
+                    console.log('maslkdfj');
+                    hashPassword(password).then(hashedPass => {
+                        addUser(userName, firstName, lastName, email, hashedPass).then(() => {
+                                res.cookie(authCookieName, createSession(userName), { httpOnly: true, secure: true });
+                                res.cookie('userName', userName);
+                                res.redirect('/home');
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                res.status(500).json(err)
+                            });
+                    });
+                }).catch(err => {
+                    console.log(err);
+                    res.status(500).json(err)
+                });
         }
         if (data)
             res.redirect('/home');
