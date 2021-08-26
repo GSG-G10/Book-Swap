@@ -1,5 +1,6 @@
 const { checkAuth, createSession } = require('../controllers');
 const { checkIfMember, checkPassword } = require('../Database/queries');
+const { comparePasswords } = require('../utilities/hashPassword');
 
 const login = (req, res) => {
     const authCookieName = process.env.AUTH_COOKIE;
@@ -18,9 +19,15 @@ const login = (req, res) => {
                         if (data.length === 0)
                             res.status(403).json({ message: 'User or Password error' });
                         else {
-                            res.cookie(authCookie, createSession(userName), { httpOnly: true, secure: true, maxAge: 2 * 60 * 60 * 1000 });
-                            res.cookie('userName', userName);
-                            res.redirect('/home');
+                            comparePasswords(password, data[0].password, (err, same) => {
+                                if (err)
+                                    res.status(500).json({ message: 'Internal server error' });
+                                if (same) {
+                                    res.cookie(authCookie, createSession(userName), { httpOnly: true, secure: true, maxAge: 2 * 60 * 60 * 1000 });
+                                    res.cookie('userName', userName);
+                                    res.redirect('/home');
+                                }
+                            });
                         }
                     });
                 });

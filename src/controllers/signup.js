@@ -1,5 +1,6 @@
 const { checkAuth, createSession } = require('../controllers');
 const { checkIfMember, addUser } = require('../Database/queries');
+const { hashPassword } = require('../utilities/hashPassword');
 
 const signup = (req, res) => {
     const authCookieName = process.env.AUTH_COOKIE;
@@ -14,7 +15,7 @@ const signup = (req, res) => {
                     else return data;
                 })
                 .then(() => {
-                    addUser(userName, firstName, lastName, email, password).then(() => {
+                    addUser(userName, firstName, lastName, email, hashPassword(password)).then(() => {
                             res.cookie(authCookie, createSession(userName), { httpOnly: true, secure: true });
                             res.cookie('userName', userName);
                             res.redirect('/home');
