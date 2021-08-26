@@ -13,13 +13,16 @@ const signup = (req, res) => {
             const { userName, firstName, lastName, email, password } = req.body;
             console.log(userName, firstName, lastName, email, password);
             checkIfMember(userName).then(exists => {
+                    console.log('sss');
                     if (exists)
                         res.status(409).json({ message: 'User name taken' });
                 })
                 .then(() => {
                     console.log('maslkdfj');
                     hashPassword(password).then(hashedPass => {
+                        console.log('hash', hashedPass);
                         addUser(userName, firstName, lastName, email, hashedPass).then(() => {
+                                console.log('add');
                                 res.cookie(authCookieName, createSession(userName), { httpOnly: true, secure: true });
                                 res.cookie('userName', userName);
                                 res.redirect('/home');

@@ -22,7 +22,7 @@ const login = (req, res) => {
                                 console.log(err);
                                 res.status(500).json({ message: 'Internal server error' });
                             } else if (same) {
-                                res.cookie(authCookie, createSession(userName), { httpOnly: true, secure: true, maxAge: 2 * 60 * 60 * 1000 });
+                                res.cookie(authCookieName, createSession(userName), { httpOnly: true, secure: true, maxAge: 2 * 60 * 60 * 1000 });
                                 res.cookie('userName', userName);
                                 res.redirect('/home');
                             } else res.status(403).json({ message: 'User or Password error' });

@@ -1,9 +1,9 @@
 const connection = require('../config/connection');
-const getPassword = (userName) => {
+const addUser = (userName, firstName, lastName, email, password) => {
     const sql = {
-        text: 'SELECT * FROM USERS WHERE USERNAME = $1',
-        values: [userName]
+        text: 'INSERT INTO USERS VALUES ($1 , $2 , $3 , $4 , $5)',
+        values: [userName, firstName, lastName, email, password]
     }
     return connection.query(sql).then((data) => data.rows).then(rows => rows.length !== 0);
 }
-module.exports = getPassword;
+module.exports = addUser;
