@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { getHomePage, getBooks, borrowBook } = require('../controllers');
+const { getHomePage, getBooks, addBook } = require('../controllers');
 
+router.post('/addBook', addBook);
 router.get('/books', getBooks);
 //router.post('/borrow', borrowBook);
-router.use('/', getHomePage);
+router.get('/', getHomePage);
 
 module.exports = router;
