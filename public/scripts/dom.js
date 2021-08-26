@@ -29,17 +29,30 @@ const createElement = (tag, className, parent, text) => {
 
 // Create card function --------------------------------------------
 
-const createCard = (data, section) => {
-    const { author, bookname, bookImg } = data;
-    section;
-    const bookContainer = createElement("div", "book-card", booksSection, "");
-    createElement("img", "book-img", bookContainer, bookImg);
-    const bookInfo = createElement("div", "info-container", bookContainer, "");
-    // createElement('p', 'username', bookInfo, username);
-    createElement("p", "bookname", bookInfo, bookname);
-    createElement("p", "auther", bookInfo, author);
-    createElement("p", "status", bookInfo, "avilable");
-    createElement("button", "borrow btn", bookContainer, "");
+const createCard = (data) => {
+    console.log('hello');
+    const card = document.createElement('div');
+    card.setAttribute('class', 'book-card');
+    const img = document.createElement('img');
+    img.setAttribute('src', data.picture);
+    img.setAttribute('class', 'book-img');
+    const infoDiv = document.createElement('div');
+    infoDiv.setAttribute('class', 'info-container');
+    const usernameP = document.createElement('p');
+    usernameP.appendChild(document.createTextNode(`Owner: ${data.owner}`));
+    usernameP.setAttribute('class', 'username');
+    const booknameP = document.createElement('p');
+    usernameP.setAttribute('class', 'bookname');
+    usernameP.appendChild(document.createTextNode(`name: ${data.name}`));
+    const autherP = document.createElement('p');
+    usernameP.setAttribute('class', 'auther');
+    usernameP.appendChild(document.createTextNode(`Owner: ${data.author}`));
+    card.appendChild(img);
+    infoDiv.appendChild(usernameP);
+    infoDiv.appendChild(booknameP);
+    infoDiv.appendChild(autherP);
+    card.appendChild(infoDiv);
+    booksSection.appendChild(card);
 };
 // pop up form ------------------------------------------
 
