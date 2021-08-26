@@ -15,7 +15,7 @@
     <div class="container">
       <section class="login-section">
         <form action="/signup" method="post">
-          <h1 class="login-title">Sign up </h1>
+          <h1 class="login-title">Sign up</h1>
           <div class="input">
             <label for="username">User Name</label>
             <input
@@ -47,39 +47,30 @@
             />
           </div>
           <div class="input">
-            <label for="email">Email</label>
+            <label for="signup-email">Email</label>
             <input
               type="email"
-              name="login-email"
-              id="login-email"
+              name="signup-email"
+              id="signup-email"
               required
               placeholder="Enter Your Email"
             />
           </div>
           <div class="input">
-            <label for="password">Password</label>
+            <label for="signup-password">Password</label>
             <input
               type="password"
-              name="login-password"
-              id="login-password"
+              name="signup-password"
+              id="signup-password"
               required
               placeholder="Enter Your Password"
             />
           </div>
 
-          <div class="input">
-            <label for="password">Confirm Password</label>
-            <input
-              type="password"
-              name="login-co-password"
-              id="login-co-password"
-              required
-              placeholder="Enter confirm your Password"
-            />
-          </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" class="signUp-btn">Sign Up</button>
         </form>
       </section>
     </div>
+    <script src="./scripts/dom.js"></script>
   </body>
 </html>
