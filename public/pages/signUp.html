@@ -10,11 +10,6 @@
       href="https://th.bing.com/th/id/OIP.r-UF3h84JiIwOhrUjSSe3QHaE8?w=261&h=180&c=7&o=5&pid=1.7"
     />
     <title>Book Swap</title>
-    <style>
-      .login-section{
-        margin-top: 100px;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -22,11 +17,31 @@
         <form action="/signup" method="post">
           <h1 class="login-title">Sign up </h1>
           <div class="input">
-            <label for="password">Name</label>
+            <label for="username">User Name</label>
             <input
               type="text"
-              name="login-name"
-              id="login-name"
+              name="username"
+              id="username"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="first-name">First Name</label>
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+              placeholder="Enter Your Name"
+            />
+          </div>
+          <div class="input">
+            <label for="last-name">Last Name</label>
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
               required
               placeholder="Enter Your Name"
             />
