@@ -1,9 +1,7 @@
-const logout = (req , res) => {
-    res.json(
-        {
-            message: 'Hi from logout!',
-        }
-    ) 
+const logout = (req, res) => {
+    res.clearCookie(process.env.AUTH_COOKIE);
+    res.clearCookie('userName');
+    res.redirect('/');
 };
 
 module.exports = logout;
