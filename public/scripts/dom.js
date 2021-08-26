@@ -1,7 +1,20 @@
-const booksSection = document.querySelector('.books-section');
+const booksSection = document.querySelector('.book-container');
 const addedBooksSection = document.querySelector('.added-books');
 const borrowedBooksSection = document.querySelector('.borowed-books');
-
+// for pop up window 
+const popupForm = document.querySelector('.add-form-container');
+const addBtn = document.querySelector('.add-btn');
+const cancelBtn = document.querySelector('.cancel');
+const contentHider = document.querySelector('.content-hider');
+/// for log in 
+const loginUserName = document.querySelector('#login-user-name');
+const loginPassword  = document.querySelector('#login-password');
+const loginBtn = document.querySelector('#login-btn');
+// for add book  from pop up 
+const bookImgInput= document.querySelector('#book-img-input');
+const bookNameInput =document.querySelector('#book-name-input');
+const authorInput=document.querySelector('#author-input');
+const saveBtn=document.querySelector('.save');
 // function to create dom elements
 const createElement = (tag, className, parent, text) => {
   const ele = document.createElement(tag);
@@ -16,40 +29,38 @@ const createElement = (tag, className, parent, text) => {
 };
 
 // Create card function --------------------------------------------
+
 const createCard = (data, section) => {
   const {
-    username,
     author,
     bookname,
     bookImg,
-    expDate,
-  } = data;
-  const bookContainer = createElement('div', 'book-container', section, '');
+  } = data;section
+  const bookContainer = createElement('div', 'book-card', booksSection, '');
   createElement('img', 'book-img', bookContainer, bookImg);
   const bookInfo = createElement('div', 'info-container', bookContainer, '');
-  createElement('p', 'username', bookInfo, username);
+  // createElement('p', 'username', bookInfo, username);
   createElement('p', 'bookname', bookInfo, bookname);
   createElement('p', 'auther', bookInfo, author);
-  createElement('p', 'exp-date', bookInfo, expDate);
+  createElement('p', 'status', bookInfo, 'avilable');
   createElement('button', 'borrow btn', bookContainer, '');
 
-  return bookContainer;
 };
 // pop up form ------------------------------------------
-const popupForm = document.querySelector('.add-form-container');
-const addBtn = document.querySelector('.add-btn');
-const contentHider = document.querySelector('.content-hider');
+
 addBtn.addEventListener('click', () => {
   popupForm.classList.toggle('active');
   contentHider.classList.toggle('active');
   document.body.style.overflow = 'hidden';
 });
-const saveButton = document.querySelector('.save');
-const cancelBtn = document.querySelector('.cancel');
-saveButton.addEventListener('click', () => {
+saveBtn.addEventListener('click', () => {
   popupForm.classList.remove('active');
   contentHider.classList.remove('active');
   document.body.style.overflow = 'auto';
+  bookImgInput=bookImgInput.value;
+  bookNameInput=bookNameInput.value;
+  authorInput=authorInput.value;
+ fetch()
 });
 cancelBtn.addEventListener('click', () => {
   popupForm.classList.remove('active');
